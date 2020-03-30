@@ -1,0 +1,3 @@
+{% url 'news-summ' value1=article.0.4  %}
+
+<!--class="modal fade"-->

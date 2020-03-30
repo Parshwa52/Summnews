@@ -1,0 +1,746 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Give me Summ News!</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+
+  <!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+    
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<!-- Modernizr JS -->
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+    <style>
+        #ui{
+          background-color: #1c37bd;
+          color: white;
+          padding: 14px 25px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          border-radius: 8px;
+        }
+        </style>
+	</head>
+	<body>
+	<div id="colorlib-page" style="background-color:#010103">
+		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+		<aside  style="background-color:#010103" id="colorlib-aside" role="complementary" class="js-fullheight" >
+			<h1 id="colorlib-logo"><a href="{% url 'news-home' %}" style="color:white;">Give me summ news!</a></h1>
+			<nav id="colorlib-main-menu" role="navigation">
+				<ul>
+					<li class="colorlib-active"><a href="index.html" >Home</a></li>
+					<li><a href="{% url 'news-home' %}" style="color:white;">General</a></li>
+					<li><a href="{% url 'news-health' %}" style="color:white;">Health</a></li>
+					<li><a href="{% url 'news-science' %}" style="color:white;">Science</a></li>
+					<li><a href="{% url 'news-sports' %}" style="color:white;">Sports</a></li>
+					<li><a href="{% url 'news-tech' %}" style="color:white;">Technology</a></li>
+					<li><a href="{% url 'news-business' %}" style="color:white;font-size:200%;font-family:Times New Roman;font-style: italic;">Business</a></li>
+				</ul>
+			</nav>
+
+			<div class="colorlib-footer">
+				<p><small>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank"></a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </span> <span>Demo Images: <a href="https://unsplash.com/" target="_blank"></a> &amp; <a href="https://www.pexels.com/" target="_blank"></a></span></small></p>
+				<!--<ul>
+					<li><a href="#"><i class="icon-facebook2"></i></a></li>
+					<li><a href="#"><i class="icon-twitter2"></i></a></li>
+					<li><a href="#"><i class="icon-instagram"></i></a></li>
+					<li><a href="#"><i class="icon-linkedin2"></i></a></li>
+				</ul>-->
+			</div>
+
+		</aside>
+		
+		<div id="colorlib-main">
+			<aside id="colorlib-hero" class="js-fullheight">
+				<div class="flexslider js-fullheight">
+					<ul class="slides">
+				   	<li style="background-image: url({{ article.0.2 }});">
+				   		<div class="overlay"></div>
+				   		<div class="container-fluid">
+				   			<div class="row">
+					   			<div class="col-md-12 col-xs-12 js-fullheight slider-text">
+					   				<div class="slider-text-inner">
+					   					<div class="desc">
+											   <!--<p class="tag"><span>Style</span></p>-->
+											   
+											   <h1><a href="#" data-toggle="modal" data-target="#myModal"><font color="black">{{article.0.0}}</font></a></h1>
+											   
+						   					<!--<p><font color="black">{{article.0.1}}</font></p>-->
+											</div>
+					   				</div>
+					   			</div>
+					   		</div>
+						   </div>
+						  
+
+					   </li>
+					    
+					   
+				   	<li style="background-image: url({{article.1.2}});">
+				   		<div class="overlay"></div>
+				   		<div class="container-fluid">
+				   			<div class="row">
+					   			<div class="col-md-12 col-xs-12 js-fullheight slider-text">
+					   				<div class="slider-text-inner">
+					   					<div class="desc">
+					   						<!--<p class="tag"><span>Sports</span></p>-->
+						   					<h1><a href="#" data-toggle="modal" data-target="#myModal2">{{article.1.0}}</a></h1>
+												<!--<p><font color="black">{{article.1.1}}</font></p>-->
+											</div>
+					   				</div>
+					   			</div>
+					   		</div>
+				   		</div>
+				   	</li>
+				   	<li style="background-image: url({{article.2.2}});">
+				   		<div class="overlay"></div>
+				   		<div class="container-fluid">
+				   			<div class="row">
+					   			<div class="col-md-12 col-xs-12 js-fullheight slider-text">
+					   				<div class="slider-text-inner">
+					   					<div class="desc">
+					   						<!--<p class="tag"><span>Fashion</span></p>-->
+						   					<h1><a href="#" data-toggle="modal" data-target="#myModal3">{{article.2.0}}</a></h1>
+											  <!-- <p><font color="black">{{article.2.1}}</font></p>-->
+											</div>
+					   				</div>
+					   			</div>
+					   		</div>
+				   		</div>
+				   	</li>
+				  	</ul>
+			  	</div>
+			</aside>
+			<!-- Modal -->
+			<div id="myModal" class="modal fade" role="dialog">
+				<div class="modal-dialog" role="document">
+			  
+				  <!-- Modal content-->
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">{{article.0.0}}</h4>
+					</div>
+					<div class="modal-body">
+						<img src="{{article.0.2}}" height="400" width="580" />
+						<br/>
+                      <p>{{article.0.4}}</p>
+                      <p><a href="{{article.0.3}}" target="_blank" id="ui">View full article here</a></p>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+			  
+				</div>
+			</div>
+			  <div id="myModal2" class="modal fade" role="dialog">
+				<div class="modal-dialog" role="document">
+			  
+				  <!-- Modal content-->
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">{{article.1.0}}</h4>
+					</div>
+					<div class="modal-body">
+						<img src="{{article.1.2}}" height="400" width="580" />
+						<br/>
+                      <p>{{article.1.4}}</p>
+                      <p><a href="{{article.1.3}}" target="_blank" id="ui">View full article here</a></p>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+			  
+				</div>
+			  </div>
+			  <div id="myModal3" class="modal fade" role="dialog">
+				<div class="modal-dialog" role="document">
+			  
+				  <!-- Modal content-->
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">{{article.2.0}}</h4>
+					</div>
+					<div class="modal-body">
+						<img src="{{article.2.2}}" height="400" width="580" />
+						<br/>
+                      <p>{{article.2.4}}</p>
+                      <p><a href="{{article.2.3}}" target="_blank" id="ui">View full article here</a></p>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+			  
+				</div>
+			  </div>
+			  <div id="myModal4" class="modal fade" role="dialog">
+				<div class="modal-dialog" role="document">
+			  
+				  <!-- Modal content-->
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">{{article.3.0}}</h4>
+					</div>
+					<div class="modal-body">
+						<img src="{{article.3.2}}" height="400" width="580" />
+						<br/>
+                      <p>{{article.3.4}}</p>
+                      <p><a href="{{article.3.3}}" target="_blank" id="ui">View full article here</a></p>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+			  
+				</div>
+			  </div>
+			  <div id="myModal5" class="modal fade" role="dialog">
+				<div class="modal-dialog" role="document">
+			  
+				  <!-- Modal content-->
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">{{article.4.0}}</h4>
+					</div>
+					<div class="modal-body">
+						<img src="{{article.4.2}}" height="400" width="580" />
+						<br/>
+                      <p>{{article.4.4}}</p>
+                      <p><a href="{{article.4.3}}" target="_blank" id="ui">View full article here</a></p>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+			  
+				</div>
+			  </div>
+			  <div id="myModal6" class="modal fade" role="dialog">
+				<div class="modal-dialog" role="document">
+			  
+				  <!-- Modal content-->
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">{{article.5.0}}</h4>
+					</div>
+					<div class="modal-body">
+						<img src="{{article.5.2}}" height="400" width="580" />
+						<br/>
+                      <p>{{article.5.4}}</p>
+                      <p><a href="{{article.5.3}}" target="_blank" id="ui">View full article here</a></p>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+			  
+				</div>
+			  </div>
+			  <div id="myModal7" class="modal fade" role="dialog">
+				<div class="modal-dialog" role="document">
+			  
+				  <!-- Modal content-->
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">{{article.6.0}}</h4>
+					</div>
+					<div class="modal-body">
+						<img src="{{article.6.2}}" height="400" width="580" />
+						<br/>
+                      <p>{{article.6.4}}</p>
+                      <p><a href="{{article.6.3}}" target="_blank" id="ui">View full article here</a></p>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+			  
+				</div>
+			  </div>
+			  <div id="myModal8" class="modal fade" role="dialog">
+				<div class="modal-dialog" role="document">
+			  
+				  <!-- Modal content-->
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">{{article.7.0}}</h4>
+					</div>
+					<div class="modal-body">
+						<img src="{{article.7.2}}" height="400" width="580" />
+						<br/>
+                      <p>{{article.7.4}}</p>
+                      <p><a href="{{article.7.3}}" target="_blank" id="ui">View full article here</a></p>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+			  
+				</div>
+			  </div>
+			  <div id="myModal9" class="modal fade" role="dialog">
+				<div class="modal-dialog" role="document">
+			  
+				  <!-- Modal content-->
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">{{article.8.0}}</h4>
+					</div>
+					<div class="modal-body">
+						<img src="{{article.8.2}}" height="400" width="580" />
+						<br/>
+                      <p>{{article.8.4}}</p>
+                      <p><a href="{{article.8.3}}" target="_blank" id="ui">View full article here</a></p>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+			  
+				</div>
+			  </div>
+			  <div id="myModal10" class="modal fade" role="dialog">
+				<div class="modal-dialog" role="document">
+			  
+				  <!-- Modal content-->
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">{{article.9.0}}</h4>
+					</div>
+					<div class="modal-body">
+						<img src="{{article.9.2}}" height="400" width="580" />
+						<br/>
+                      <p>{{article.9.4}}</p>
+                      <p><a href="{{article.9.3}}" target="_blank" id="ui">View full article here</a></p>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+			  
+				</div>
+			  </div>
+			  <div id="myModal11" class="modal fade" role="dialog">
+				<div class="modal-dialog" role="document">
+			  
+				  <!-- Modal content-->
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">{{article.10.0}}</h4>
+					</div>
+					<div class="modal-body">
+						<img src="{{article.10.2}}" height="400" width="580" />
+						<br/>
+                      <p>{{article.10.4}}</p>
+                      <p><a href="{{article.10.3}}" target="_blank" id="ui">View full article here</a></p>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+			  
+				</div>
+			  </div>
+			  <div id="myModal12" class="modal fade" role="dialog">
+				<div class="modal-dialog" role="document">
+			  
+				  <!-- Modal content-->
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">{{article.11.0}}</h4>
+					</div>
+					<div class="modal-body">
+						<img src="{{article.11.2}}" height="400" width="580" />
+						<br/>
+                      <p>{{article.11.4}}</p>
+                      <p><a href="{{article.11.3}}" target="_blank" id="ui">View full article here</a></p>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+			  
+				</div>
+			  </div>
+			  <div id="myModal13" class="modal fade" role="dialog">
+				<div class="modal-dialog" role="document">
+			  
+				  <!-- Modal content-->
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">{{article.12.0}}</h4>
+					</div>
+					<div class="modal-body">
+						<img src="{{article.12.2}}" height="400" width="580" />
+						<br/>
+                      <p>{{article.12.4}}</p>
+                      <p><a href="{{article.12.3}}" target="_blank" id="ui">View full article here</a></p>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+			  
+				</div>
+			  </div>
+			  <div id="myModal14" class="modal fade" role="dialog">
+				<div class="modal-dialog" role="document">
+			  
+				  <!-- Modal content-->
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">{{article.13.0}}</h4>
+					</div>
+					<div class="modal-body">
+						<img src="{{article.13.2}}" height="400" width="580" />
+						<br/>
+                      <p>{{article.13.4}}</p>
+                      <p><a href="{{article.13.3}}" target="_blank" id="ui">View full article here</a></p>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+			  
+				</div>
+			  </div>
+			  <div id="myModal15" class="modal fade" role="dialog">
+				<div class="modal-dialog" role="document">
+			  
+				  <!-- Modal content-->
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">{{article.14.0}}</h4>
+					</div>
+					<div class="modal-body">
+						<img src="{{article.14.2}}" height="400" width="580" />
+						<br/>
+                      <p>{{article.14.4}}</p>
+                      <p><a href="{{article.14.3}}" target="_blank" id="ui">View full article here</a></p>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+			  
+				</div>
+			  </div>
+			  <div id="myModal16" class="modal fade" role="dialog">
+				<div class="modal-dialog" role="document">
+			  
+				  <!-- Modal content-->
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">{{article.15.0}}</h4>
+					</div>
+					<div class="modal-body">
+						<img src="{{article.15.2}}" height="400" width="580" />
+						<br/>
+                      <p>{{article.15.4}}</p>
+                      <p><a href="{{article.15.3}}" target="_blank" id="ui">View full article here</a></p>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+			  
+				</div>
+			  </div>
+			  <div id="myModal17" class="modal fade" role="dialog">
+				<div class="modal-dialog" role="document">
+			  
+				  <!-- Modal content-->
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">{{article.16.0}}</h4>
+					</div>
+					<div class="modal-body">
+						<img src="{{article.16.2}}" height="400" width="580" />
+						<br/>
+                      <p>{{article.16.4}}</p>
+                      <p><a href="{{article.16.3}}" target="_blank" id="ui">View full article here</a></p>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+			  
+				</div>
+			  </div>
+			<div class="colorlib-blog">
+				<div class="container-wrap">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="blog-entry animate-box">
+								<div class="blog-img" style="background-image: url({{article.3.2}});">
+									<div class="desc text-center">
+										<!--<p class="tag"><span>Nature</span></p>-->
+										<h2 class="head-article"><a href="#" data-toggle="modal" data-target="#myModal4">{{article.3.0}}</a></h2>
+										<!--<p>{{article.3.1}}</p>-->
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="blog-entry animate-box">
+										<div class="blog-img blog-img2" style="background-image: url({{article.4.2}});">
+											<div class="desc text-center">
+												<p class="tag"><span>auto</span></p>
+												<h2 class="head-article"><a href="#" data-toggle="modal" data-target="#myModal5">{{article.4.0}}</a></h2>
+												
+												<!--<p>{{article.4.1}}</p>-->
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="blog-entry animate-box">
+										<div class="blog-img blog-img2" style="background-image: url({{article.5.2}});">
+											<div class="desc text-center">
+												<!--<p class="tag"><span>Sports</span></p>-->
+												<h2 class="head-article"><a href="#" data-toggle="modal" data-target="#myModal6">{{article.5.0}}</a></h2>
+												<!--<p>{{article.5.1}}</p>-->
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="blog-entry animate-box">
+										<div class="blog-img blog-img2" style="background-image: url({{article.6.2}});">
+											<div class="desc text-center">
+												<!--<p class="tag"><span>Place</span></p>-->
+												<h2 class="head-article"><a href="#" data-toggle="modal" data-target="#myModal7">{{article.6.0}}</a></h2>
+												<!--<p><font color="black">{{article.6.1}}</font></p>-->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="blog-entry animate-box">
+								<div class="blog-img" style="background-image: url({{article.7.2}});">
+									<div class="desc text-center">
+										<!--<p class="tag"><span>Sports</span></p>-->
+										<h2 class="head-article"><a href="#" data-toggle="modal" data-target="#myModal8">{{article.7.0}}</a></h2>
+										<!--<p><font color="black">{{article.7.1}}</font></p>-->
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="blog-entry animate-box">
+								<div class="blog-img" style="background-image: url({{article.8.2}});">
+									<div class="desc text-center">
+										<!--<p class="tag"><span>Movies</span></p>-->
+										<h2 class="head-article"><a href="#" data-toggle="modal" data-target="#myModal9">{{article.8.0}}</a></h2>
+										<!--<p><font color="black">{{article.8.1}}</font></p>-->
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="blog-entry animate-box">
+								<div class="blog-img" style="background-image: url({{article.9.2}});">
+									<div class="desc text-center">
+										<!--<p class="tag"><span>Movies</span></p>-->
+										<h2 class="head-article"><a href="#" data-toggle="modal" data-target="#myModal10">{{article.9.0}}</a></h2>
+										<!--<p><font color="black">{{article.9.1}}</font></p>-->
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-5">
+							<div class="blog-entry animate-box">
+								<div class="blog-img" style="background-image: url({{article.10.2}});">
+									<div class="desc text-center">
+										<!--<p class="tag"><span>Sports</span></p>-->
+										<h2 class="head-article"><a href="#" data-toggle="modal" data-target="#myModal11">{{article.10.0}}</a></h2>
+										<!--<p><font color="black">{{article.10.1}}</font></p>-->
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-7">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="blog-entry animate-box">
+										<div class="blog-img blog-img2" style="background-image: url({{article.11.2}});">
+											<div class="desc text-center">
+												<!--<p class="tag"><span>Place</span></p>-->
+												<h2 class="head-article"><a href="#" data-toggle="modal" data-target="#myModal12">{{article.11.0}}</a></h2>
+												<!--<p><font color="black">{{article.11.1}}</font></p>-->
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="blog-entry animate-box">
+										<div class="blog-img blog-img2" style="background-image: url({{article.12.2}});">
+											<div class="desc text-center">
+												<!--<p class="tag"><span>Place</span></p>-->
+												<h2 class="head-article"><a href="#" data-toggle="modal" data-target="#myModal13">{{article.12.0}}</a></h2>
+												<!--<p><font color="black">{{article.12.1}}</font></p>-->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="blog-entry animate-box">
+										<div class="blog-img blog-img2" style="background-image: url({{article.13.2}});">
+											<div class="desc text-center">
+												<p class="tag"><span>auto</span></p>
+												<h2 class="head-article"><a href="#" data-toggle="modal" data-target="#myModal14">{{article.13.0}}</a></h2>
+												<!--<p><font color="black">{{article.13.1}}</font></p>-->
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="blog-entry animate-box">
+										<div class="blog-img blog-img2" style="background-image: url({{article.14.2}});">
+											<div class="desc text-center">
+												<!--<p class="tag"><span>Sports</span></p>-->
+												<h2 class="head-article"><a href="#" data-toggle="modal" data-target="#myModal15">{{article.14.0}}</a></h2>
+												<!--<p><font color="black">{{article.14.1}}</font></p>-->
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="blog-entry animate-box">
+										<div class="blog-img blog-img2" style="background-image: url({{article.15.2}});">
+											<div class="desc text-center">
+												<!--<p class="tag"><span>Place</span></p>-->
+												<h2 class="head-article"><a href="#" data-toggle="modal" data-target="#myModal16">{{article.15.0}}</a></h2>
+												<!--<p><font color="black">{{article.15.1}}</font></p>-->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="blog-entry animate-box">
+								<div class="blog-img" style="background-image: url({{article.16.2}});">
+									<div class="desc text-center">
+										<!--<p class="tag"><span>Healthy</span></p>-->
+										<h2 class="head-article"><a href="#" data-toggle="modal" data-target="#myModal17">{{article.16.0}}</a></h2>
+										<!--<p><font color="black">{{article.16.1}}</font></p>-->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+							<ul class="pagination">
+								<li class="disabled"><a href="#">&laquo;</a></li>
+								<li class="active"><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">&raquo;</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+	</div>
+
+	<!-- jQuery -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<!-- jQuery Easing -->
+	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+	<!-- Bootstrap -->
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- Waypoints -->
+	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+	<!-- Flexslider -->
+	<script src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+	<!-- Magnific Popup -->
+	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+	<script src="{% static 'js/magnific-popup-options.js' %}"></script>
+	<!-- Owl Carousel -->
+	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<!-- Sticky Kit -->
+	<script src="{% static 'js/sticky-kit.min.js' %}"></script>
+	
+	
+	<!-- MAIN JS -->
+	<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>
+
